@@ -3,6 +3,6 @@ platform :ios, '9.0'
 use_frameworks!
 
 target 'Adios' do
-    pod 'Alamofire', :git => 'https://github.com/Alamofire/Alamofire.git', :branch => 'swift-2.0'
+    # pod 'Alamofire', :git => 'https://github.com/Alamofire/Alamofire.git', :branch => 'swift-2.0'
+    pod 'Alamofire', '~> 2.0'
 end
-
