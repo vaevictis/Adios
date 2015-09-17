@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1D0B5804FCA23BB2340F9B5D /* Pods_Adios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8C187D51BA4B2D5A2712A3E /* Pods_Adios.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		9DA772331BAAF6CF0049E4E1 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DA7722A1BAAF53C0049E4E1 /* Alamofire.framework */; };
 		9DA772341BAAF6CF0049E4E1 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9DA7722A1BAAF53C0049E4E1 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C404E4631B827219006BB98E /* blockerList.json in Resources */ = {isa = PBXBuildFile; fileRef = C404E4621B827219006BB98E /* blockerList.json */; };
@@ -189,7 +188,6 @@
 		7E53B10F442085A70697AA5E /* Pods-Adios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Adios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Adios/Pods-Adios.debug.xcconfig"; sourceTree = "<group>"; };
 		9DA7720F1BAAF52F0049E4E1 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = Alamofire/Alamofire.xcodeproj; sourceTree = "<group>"; };
 		9DA772211BAAF53C0049E4E1 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = Alamofire/Alamofire.xcodeproj; sourceTree = "<group>"; };
-		A8C187D51BA4B2D5A2712A3E /* Pods_Adios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Adios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C404E4601B827219006BB98E /* BaseContentBlocker.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = BaseContentBlocker.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		C404E4621B827219006BB98E /* blockerList.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = blockerList.json; sourceTree = "<group>"; };
 		C404E4641B827219006BB98E /* ActionRequestHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionRequestHandler.swift; sourceTree = "<group>"; };
@@ -255,7 +253,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D0B5804FCA23BB2340F9B5D /* Pods_Adios.framework in Frameworks */,
 				9DA772331BAAF6CF0049E4E1 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -312,7 +309,6 @@
 			isa = PBXGroup;
 			children = (
 				9DA7720F1BAAF52F0049E4E1 /* Alamofire.xcodeproj */,
-				A8C187D51BA4B2D5A2712A3E /* Pods_Adios.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

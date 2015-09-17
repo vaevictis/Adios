@@ -34,34 +34,37 @@ public class ListsManager {
             
             let fileManager = NSFileManager()
             let groupUrl = NSFileManager.defaultManager().containerURLForSecurityApplicationGroupIdentifier("group.AG.Adios")
-            let sharedContainerPathLocation = groupUrl?.path
-
+            
             if baseListWithoutWhitelist == "" {
                 baseListWithoutWhitelist = "{\"trigger\":{\"url-filter\":\"armand.gr\"},\"action\":{\"type\": \"css-display-none\",\"selector\": \".testContentBlockerTwo\"}},"
             }
             
             var baseList = baseListWithoutWhitelist + whitelistAssembled
             baseList = "[" + baseList.substringToIndex(baseList.endIndex.predecessor()) + "]" // Removing the last coma
-            let baseListPath = sharedContainerPathLocation! + "/baseList.json"
-            if !fileManager.fileExistsAtPath(baseListPath) {
-                fileManager.createFileAtPath(baseListPath, contents: baseList.dataUsingEncoding(NSUTF8StringEncoding), attributes: nil)
-            } else {
-                try! baseList.writeToFile(baseListPath, atomically: true, encoding: NSUTF8StringEncoding)
-            }
-            
-            
-            if secondListWithoutWhitelist == "" {
-                secondListWithoutWhitelist = "{\"trigger\":{\"url-filter\":\"armand.gr\"},\"action\":{\"type\": \"css-display-none\",\"selector\": \".testContentBlockerTwo\"}},"
-            }
             
             var secondList = secondListWithoutWhitelist + whitelistAssembled
             secondList = "[" + secondList.substringToIndex(secondList.endIndex.predecessor()) + "]" // Removing the last coma
-            let secondListPath = sharedContainerPathLocation! + "/secondList.json"
-            if !fileManager.fileExistsAtPath(secondListPath) {
-                fileManager.createFileAtPath(secondListPath, contents: secondList.dataUsingEncoding(NSUTF8StringEncoding), attributes: nil)
-            } else {
-                try! secondList.writeToFile(secondListPath, atomically: true, encoding: NSUTF8StringEncoding)
+
+            if secondListWithoutWhitelist == "" {
+                secondListWithoutWhitelist = "{\"trigger\":{\"url-filter\":\"armand.gr\"},\"action\":{\"type\": \"css-display-none\",\"selector\": \".testContentBlockerTwo\"}},"
             }
+
+            if let sharedContainerPathLocation = groupUrl?.path {
+                let baseListPath = sharedContainerPathLocation + "/baseList.json"
+                if !fileManager.fileExistsAtPath(baseListPath) {
+                    fileManager.createFileAtPath(baseListPath, contents: baseList.dataUsingEncoding(NSUTF8StringEncoding), attributes: nil)
+                } else {
+                    try! baseList.writeToFile(baseListPath, atomically: true, encoding: NSUTF8StringEncoding)
+                }
+                
+                let secondListPath = sharedContainerPathLocation + "/secondList.json"
+                if !fileManager.fileExistsAtPath(secondListPath) {
+                    fileManager.createFileAtPath(secondListPath, contents: secondList.dataUsingEncoding(NSUTF8StringEncoding), attributes: nil)
+                } else {
+                    try! secondList.writeToFile(secondListPath, atomically: true, encoding: NSUTF8StringEncoding)
+                }
+            }
+            
             dispatch_async(dispatch_get_main_queue()) {
                 NSUserDefaults.standardUserDefaults().setObject(NSDate(), forKey: "lastUpdateTimestamp")
                 NSUserDefaults.standardUserDefaults().synchronize()
